@@ -18,6 +18,8 @@
   "homepage": "https://github.com/petez32/StepUp-Electronics-backend#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^2.0.7"
+    "mongoose": "^5.12.3",
+    "nodemon": "^2.0.7",
+    "uuid": "^8.3.2"
   }
 }
