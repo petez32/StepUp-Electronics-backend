@@ -1,7 +1,20 @@
  
  const UsersPostSchema = require("../models/users")
+ // import bcrypt
+ //const bcrypt = require("bcrypt");
+ //set salt rounds
+ //const saltRounds = 10
  const signUp =  async(req,res, next) =>{
-    newUser = new UsersPostSchema(req.body);
+     let {userName, password, firstName, lastName, email }= req.body
+// create a hashpassword
+    newUser = new UsersPostSchema({
+        userName,
+        firstName,
+        lastName,
+        password,
+        email
+
+    });
     try{
         const user = await newUser.save();
         if(!user) throw Error("user not saved");

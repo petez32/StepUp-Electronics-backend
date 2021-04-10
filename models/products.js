@@ -12,6 +12,11 @@ const productsPostSchema = new Schema({
         required: true,
 
     },
+    category: {
+        type: String,
+        required: true,
+
+    },
     imageUrl:{
         type: String,
         required: true,

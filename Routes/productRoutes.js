@@ -8,7 +8,7 @@ const router = express.Router();
 const addProductRequest = require("../Controllers/addproduct")
 const getAllProducts = require("../Controllers/getAllProducts")
 
-// add the post request
+// add the post/ add product request
 
 router.post("/",addProductRequest);
 // get all products

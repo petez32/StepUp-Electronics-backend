@@ -15,6 +15,7 @@ mongoose.connect(MONGO_URI,
 
 //import the UsersPostModel
 const cors = require("cors")
+const userLogin = require('./Controllers/userLogin')
 const app = express()
 const port = 5000
 
@@ -25,6 +26,7 @@ app.use(express.json())
 // Post user
 app.use("/users", postRoutes)
 app.use("/products", productRoutes)
+app.use("/login", userLogin)
 
 
 app.listen(port, ()=>{ 
