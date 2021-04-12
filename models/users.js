@@ -30,5 +30,21 @@ const UsersPostSchema = new Schema({
         type: String,
         
     } 
+    ,
+    cart:[],
+    email: {
+        type: String,
+        
+    },
+    credits:{
+        type:Number,
+        default: 50
+    },
+    imageUrl:{
+        type: String,
+        required:false, 
+        default:""
+    }
+
 })
 module.exports = mongoose.model('users', UsersPostSchema);

@@ -7,6 +7,8 @@ const router = express.Router();
 const signUpRequest = require("../Controllers/userSignUp")
 // import login function
 const userLogin = require("../Controllers/userLogin")
+// import getuser
+const getUsers = require("../Controllers/getUsers")
 
 
 
@@ -14,5 +16,7 @@ const userLogin = require("../Controllers/userLogin")
 router.post("/",signUpRequest);
 // add login request
 router.post("/",userLogin)
+// get all user request
+router.get("/",getUsers)
 
 module.exports = router;

@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 // import mongo url fron the config.js file 
 const {MONGO_URI} = require('./config')
 // Routes
-const postRoutes = require("./Routes/userRoutes")
+const userRoutes= require("./Routes/userRoutes")
 const productRoutes = require("./Routes/productRoutes")
 // import express
 const express = require("express")
@@ -24,9 +24,10 @@ app.use(cors());
 app.use(express.json())
 // Routes 
 // Post user
-app.use("/users", postRoutes)
+app.use("/users", userRoutes)
 app.use("/products", productRoutes)
-app.use("/login", userLogin)
+ app.use("/login", userLogin)
+
 
 
 app.listen(port, ()=>{ 
