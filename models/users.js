@@ -29,9 +29,7 @@ const UsersPostSchema = new Schema({
     email: {
         type: String,
         
-    } 
-    ,
-    cart:[],
+    } ,
     email: {
         type: String,
         

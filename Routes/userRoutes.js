@@ -12,11 +12,13 @@ const getUsers = require("../Controllers/getUsers")
 
 
 
+
 // add the post request
 router.post("/",signUpRequest);
 // add login request
 router.post("/",userLogin)
 // get all user request
 router.get("/",getUsers)
+
 
 module.exports = router;
