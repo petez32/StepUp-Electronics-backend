@@ -29,6 +29,20 @@ const UsersPostSchema = new Schema({
     email: {
         type: String,
         
-    } 
+    } ,
+    email: {
+        type: String,
+        
+    },
+    credits:{
+        type:Number,
+        default: 50
+    },
+    imageUrl:{
+        type: String,
+        required:false, 
+        default:""
+    }
+
 })
 module.exports = mongoose.model('users', UsersPostSchema);

@@ -5,16 +5,16 @@ const router = express.Router();
 
 // import the post/ signup function 
 //const signUpRequest = require("../Controllers/userSignUp")
-const addProductRequest = require("../Controllers/addproduct")
-const getAllProducts = require("../Controllers/getAllProducts")
+const addToCart = require("../Controllers/addToCart")
+const getCart = require("../Controllers/getUserCart")
+
 
 
 // add the post/ add product request
 
-router.post("/",addProductRequest);
-// get all products
-router.get("/", getAllProducts);
-// add itemto cart 
+router.post("/",addToCart);
+router.get("/", getCart)
+
 
 module.exports = router;
 
