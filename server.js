@@ -19,6 +19,10 @@ const cors = require("cors")
 const userLogin = require('./Controllers/userLogin')
 const addToCart = require("./Controllers/addToCart")
 const getCart = require("./Controllers/getUserCart")
+const deleteUser = require("./Controllers/deleteUser")
+const signUp = require("./Controllers/userSignUp")
+const updateuser = require("./Controllers/updateUser")
+const updateUserCredits = require('./Controllers/updateCredit')
 const app = express()
 const port = 5000
 
@@ -26,15 +30,26 @@ const port = 5000
 app.use(cors());
 app.use(express.json())
 // Routes 
-// Post user
+
 app.use("/users", userRoutes)
+// get users
+//app.use("/users",getallUsers)
 app.use("/products", productRoutes)
-app.use("/cart", addToCart)
+//app.use("/cart/add", addToCart)
  app.use("/login", userLogin)
 // add to cart
-app.use("/users/cart", cartRoutes)
+app.use("/cart", cartRoutes)
 // get user Cart
-app.use("/cart/", getCart)
+app.use("/cart/:id", getCart)
+// deleteUser
+app.use("/users/delete/:id", deleteUser)
+// user sign up
+app.use("/users/signUp",signUp)
+// update user
+app.use("/users/update/:id", updateuser)
+// update credits
+app.use("/users/updateCredits/:id",updateUserCredits)
+
 
 
 app.listen(port, ()=>{ 

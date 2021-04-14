@@ -9,6 +9,12 @@ const signUpRequest = require("../Controllers/userSignUp")
 const userLogin = require("../Controllers/userLogin")
 // import getuser
 const getUsers = require("../Controllers/getUsers")
+// import delete user
+const deleteUser = require("../Controllers/deleteUser")
+// import update user
+const updateuser = require("../Controllers/updateUser")
+// import updateusercredits
+const updateUserCredits= require("../Controllers/updateCredit")
 
 
 
@@ -19,6 +25,12 @@ router.post("/",signUpRequest);
 router.post("/",userLogin)
 // get all user request
 router.get("/",getUsers)
+// delete user
+router.delete("/", deleteUser)
+// update user
+router.patch("/", updateuser)
+// update credits
+router.patch("/",updateUserCredits)
 
 
 module.exports = router;

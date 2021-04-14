@@ -18,7 +18,7 @@
     try{
         const user = await newUser.save();
         if(!user) throw Error("user not saved");
-        res.send("successfull")
+        res.send("successfull user been added")
 
 
     }catch {

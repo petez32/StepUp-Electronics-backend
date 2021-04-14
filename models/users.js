@@ -29,14 +29,12 @@ const UsersPostSchema = new Schema({
     email: {
         type: String,
         
-    } ,
-    email: {
-        type: String,
-        
     },
     credits:{
         type:Number,
-        default: 50
+        default:50
+        
+
     },
     imageUrl:{
         type: String,
