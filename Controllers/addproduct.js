@@ -4,7 +4,7 @@ const addProduct =  async(req,res, next) =>{
    try{
        const product = await newProduct.save();
        if(!product) throw Error("product not saved");
-       res.send("successfull")
+       res.send("product successfully added")
 
 
    }catch {

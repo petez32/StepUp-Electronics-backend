@@ -3,9 +3,9 @@ const mongoose = require('mongoose')
 // import mongo url fron the config.js file 
 const {MONGO_URI} = require('./config')
 // Routes
-const userRoutes= require("./Routes/userRoutes")
-const productRoutes = require("./Routes/productRoutes")
-const cartRoutes = require("./Routes/cartRoutes")
+// const userRoutes= require("./Routes/userRoutes")
+// const productRoutes = require("./Routes/productRoutes")
+// const cartRoutes = require("./Routes/cartRoutes")
 // import express
 const express = require("express")
 // connect to mongodb
@@ -23,28 +23,34 @@ const deleteUser = require("./Controllers/deleteUser")
 const signUp = require("./Controllers/userSignUp")
 const updateuser = require("./Controllers/updateUser")
 const updateUserCredits = require('./Controllers/updateCredit')
+const getallUsers = require("./Controllers/getUsers")
+const getAllProducts = require('./Controllers/getAllProducts')
+const addProductRequest = require("./Controllers/addproduct")
 const app = express()
 const port = 5000
 
 // middlewares
 app.use(cors());
 app.use(express.json())
+
 // Routes 
 
-app.use("/users", userRoutes)
+
 // get users
-//app.use("/users",getallUsers)
-app.use("/products", productRoutes)
+app.use("/allusers",getallUsers)
+// add product 
+app.use("/product/add", addProductRequest)
+app.use("/products",getAllProducts)
 //app.use("/cart/add", addToCart)
  app.use("/login", userLogin)
 // add to cart
-app.use("/cart", cartRoutes)
+app.use("/cart/add", addToCart)
 // get user Cart
 app.use("/cart/:id", getCart)
 // deleteUser
 app.use("/users/delete/:id", deleteUser)
 // user sign up
-app.use("/users/signUp",signUp)
+app.use("/users",signUp)
 // update user
 app.use("/users/update/:id", updateuser)
 // update credits
