@@ -26,6 +26,10 @@ const updateUserCredits = require('./Controllers/updateCredit')
 const getallUsers = require("./Controllers/getUsers")
 const getAllProducts = require('./Controllers/getAllProducts')
 const addProductRequest = require("./Controllers/addproduct")
+const DeleteItem = require('./Controllers/deleteFromCart')
+const checkOutCart= require('./Controllers/checkOut')
+const getUser= require('./Controllers/getUser')
+const getUserOrder= require('./Controllers/getUserOrder')
 const app = express()
 const port = 5000
 
@@ -45,16 +49,26 @@ app.use("/products",getAllProducts)
  app.use("/login", userLogin)
 // add to cart
 app.use("/cart/add", addToCart)
+// delete item from cart
+app.use("/cart/delete/:id", DeleteItem)
+// check out
+app.use("/cart/checkout/:id",checkOutCart )
+// get order
+app.use("/order/:id",getUserOrder )
+
 // get user Cart
-app.use("/cart/:id", getCart)
+app.use("/cart/get/:id", getCart)
 // deleteUser
 app.use("/users/delete/:id", deleteUser)
 // user sign up
 app.use("/users",signUp)
+// getuser
+app.use("/user/:id",getUser)
+
 // update user
 app.use("/users/update/:id", updateuser)
 // update credits
-app.use("/users/updateCredits/:id",updateUserCredits)
+app.use("/updateCredits/:id",updateUserCredits)
 
 
 

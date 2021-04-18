@@ -15,6 +15,7 @@ const deleteUser = require("../Controllers/deleteUser")
 const updateuser = require("../Controllers/updateUser")
 // import updateusercredits
 const updateUserCredits= require("../Controllers/updateCredit")
+const getUser= require("../Controllers/getUser")
 
 
 
@@ -32,6 +33,7 @@ router.delete("/", deleteUser)
 router.patch("/", updateuser)
 // update credits
 router.patch("/",updateUserCredits)
+router.get("/",getUser)
 
 
 module.exports = router;

@@ -23,5 +23,12 @@ const cartSchema = new Schema({
         
 
     } 
+    ,
+    checkedOut: {
+        type: Boolean ,
+        default: false
+        
+
+    } 
 })
 module.exports = mongoose.model('shoppingCarts', cartSchema);
