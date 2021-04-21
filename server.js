@@ -66,7 +66,7 @@ app.use("/users",signUp)
 app.use("/user/:id",getUser)
 
 // update user
-app.use("/users/update/:id", updateuser)
+app.use("/update/user/:id", updateuser)
 // update credits
 app.use("/updateCredits/:id",updateUserCredits)
 

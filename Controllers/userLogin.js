@@ -17,7 +17,15 @@ const userLogin = async(req, res, next)=>{
      if(user){
        if(toString(user.password) === toString(req.body.password)){
         const token = jwt.sign({userName: user.userName, id:user._id},tokenSecrete );
-        res.header("authToken", token).send({token:token,userName:user.userName,id:user._id, loaded: true, credits:user.credits})
+        res.header("authToken", token).send({
+          token:token,
+          userName:user.userName,
+          id:user._id, loaded: true,
+           credits:user.credits,
+           firstName:user.firstName,
+           lastName:user.lastName,
+           email:user.email
+          })
 
        } 
        // create and asign token 

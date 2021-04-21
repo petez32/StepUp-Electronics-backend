@@ -2,13 +2,11 @@ const users = require("../models/users");
 
 
 const updateUser = async(req, res, next)=>{
-    const {userName, firstName,lastName, imageUrl, email}= req.body
+    const {userName, firstName,lastName, email}= req.body
     try{
         await users.updateOne({_id:req.params.id},{$set:{
-            userName,
             firstName,
             lastName,
-            imageUrl,
             email
 
         }});
