@@ -1,5 +1,3 @@
 module.exports ={
-    MONGO_URI:"mongodb+srv://tucker:Tuc2017@04@steup-electronics.mntev.mongodb.net" +
-    "/StepUpElectronics?retryWrites=true&w=majority",
-    tokenSecrete: "fytyksksnddjfldnf"
+    MONGO_URI:mongodb+srv://petezamora32:<password>@cluster0.ty5xf02.mongodb.net/test
 }
